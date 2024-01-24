@@ -124,6 +124,7 @@ var _ net.Listener = &Listener{}
 // A Listener is a VM sockets implementation of a net.Listener.
 type Listener struct {
 	l *listener
+	f *os.File
 }
 
 // Accept implements the Accept method in the net.Listener interface; it waits
@@ -141,6 +142,8 @@ func (l *Listener) Accept() (net.Conn, error) {
 // Addr returns the listener's network address, a *Addr. The Addr returned is
 // shared by all invocations of Addr, so do not modify it.
 func (l *Listener) Addr() net.Addr { return l.l.Addr() }
+
+func (l *Listener) File() (*os.File, error) { return l.f, nil }
 
 // Close stops listening on the VM sockets address. Already Accepted connections
 // are not closed.

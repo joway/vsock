@@ -125,6 +125,7 @@ func newListener(c *socket.Conn) (*Listener, error) {
 	}
 
 	return &Listener{
+		f: c.File(),
 		l: &listener{
 			c:    c,
 			addr: addr,
