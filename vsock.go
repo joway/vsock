@@ -205,8 +205,8 @@ type Conn struct {
 	remote *Addr
 }
 
-func (c *Conn) File() *os.File {
-	return c.c.File()
+func (c *Conn) Fd() int {
+	return c.c.Fd()
 }
 
 // Close closes the connection.

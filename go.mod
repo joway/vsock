@@ -10,4 +10,4 @@ require (
 	golang.org/x/sys v0.11.0
 )
 
-replace github.com/mdlayher/socket => github.com/joway/socket v0.0.0-20240124092902-ce5d567234fb
+replace github.com/mdlayher/socket => github.com/joway/socket v0.0.0-20240129032302-36ee54dae5dc
